@@ -12,7 +12,7 @@ function cifraLetra(letra, chave){
     if(letra.match(" ")){
         return " "
     }
-    let resultado = letras[ (letras.indexOf(letra.toLowerCase() ) + chave) % letras.length ]
+    let resultado = letras[ (letras.indexOf(letra.toLowerCase()) + chave) % letras.length ]
     return resultado
 }
 
@@ -20,7 +20,11 @@ function decifraLetra(letra, chave){
     if(letra.match(" ")){
         return " "
     }
-    let resultado = letras[ (letras.indexOf(letra.toLowerCase() ) - chave) % letras.length ]
+    let index = (letras.indexOf(letra.toLowerCase() ) - chave) % letras.length
+    if(index < 0){
+        index = letras.length - chave
+    }
+    let resultado = letras[ index ]
     return resultado
 }
 
