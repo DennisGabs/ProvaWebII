@@ -28,4 +28,4 @@ function decifraLetra(letra, chave){
     return resultado
 }
 
-export { criptografia, cifraLetra, decifraLetra }
+export default { criptografia, cifraLetra, decifraLetra }
